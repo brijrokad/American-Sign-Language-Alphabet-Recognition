@@ -1,0 +1,83 @@
+{
+  "name": "keras-js",
+  "version": "0.3.0",
+  "description": "Run Keras models (tensorflow backend) in the browser, with GPU support",
+  "main": "lib/index.js",
+  "scripts": {
+    "watch": "NODE_ENV=development BABEL_ENV=browser webpack --watch --config webpack.config.js",
+    "build:browser": "rm -rf dist; NODE_ENV=production BABEL_ENV=browser webpack --config webpack.config.js",
+    "build:node": "rm -rf lib; cp -r src lib; NODE_ENV=production BABEL_ENV=node babel lib --out-dir lib",
+    "build": "npm run build:browser && npm run build:node",
+    "server": "http-server . -c-1 -p 3000",
+    "demos:watch": "cd demos; NODE_ENV=development BABEL_ENV=browser webpack --watch --config webpack.config.js",
+    "demos:build": "cd demos; rm -rf dist; NODE_ENV=production BABEL_ENV=browser webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/transcranial/keras-js.git"
+  },
+  "keywords": [
+    "keras",
+    "deep",
+    "learning",
+    "machine",
+    "learning",
+    "neural",
+    "networks",
+    "javascript",
+    "webgl",
+    "gpu"
+  ],
+  "author": "Leon Chen <leon@md.ai>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/transcranial/keras-js/issues"
+  },
+  "homepage": "https://github.com/transcranial/keras-js#readme",
+  "dependencies": {
+    "axios": "^0.16.1",
+    "babel-polyfill": "^6.23.0",
+    "bluebird": "^3.5.0",
+    "cwise": "^1.0.10",
+    "lodash": "^4.17.4",
+    "ndarray": "^1.0.18",
+    "ndarray-blas-level2": "^1.1.0",
+    "ndarray-concat-rows": "^1.0.1",
+    "ndarray-gemm": "^1.0.0",
+    "ndarray-ops": "^1.2.2",
+    "ndarray-squeeze": "^1.0.2",
+    "ndarray-tile": "^1.0.3",
+    "ndarray-unpack": "^1.0.0",
+    "ndarray-unsqueeze": "^1.0.3",
+    "weblas": "^0.9.1"
+  },
+  "devDependencies": {
+    "arraybuffer-loader": "^0.2.2",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-async-to-module-method": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.5.1",
+    "blueimp-load-image": "^2.12.2",
+    "css-loader": "^0.28.2",
+    "eslint": "^3.19.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-html": "^2.0.3",
+    "glslify-loader": "^1.0.2",
+    "http-server": "^0.10.0",
+    "postcss-cssnext": "^2.11.0",
+    "postcss-import": "^10.0.0",
+    "postcss-loader": "^2.0.5",
+    "raw-loader": "^0.5.1",
+    "script-loader": "^0.7.0",
+    "vue": "^2.3.3",
+    "vue-loader": "^12.1.0",
+    "vue-mdl": "^1.1.1",
+    "vue-router": "^2.5.3",
+    "vue-template-compiler": "^2.3.3",
+    "webpack": "^2.6.1"
+  }
+}
